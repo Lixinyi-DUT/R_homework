@@ -17,8 +17,7 @@ rankhospital <- function(state, outcome, num = "best") {
     stop("invalid outcome")
   }
   sdata[[outname]]<-as.numeric(sdata[[outname]])
- #sdata=sdata[[outname]][!is.na(sdata[[outname]]),]
-  sdata=sdata[complete.cases(sdata[[outname]]),]
+  sdata<-sdata[complete.cases(sdata[[outname]]),]
   hos<-sdata[order(sdata[[outname]],sdata$hospital.name),]
    if(num=="worst")
      return(hos$hospital.name[nrow(hos)])

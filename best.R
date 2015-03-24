@@ -17,6 +17,6 @@ best <- function(state, outcome) {
   {
    stop("invalid outcome")
   }
-  n=which.min(odata)
+  n<-which.min(odata)
   sdata$hospital.name[n]
 }
